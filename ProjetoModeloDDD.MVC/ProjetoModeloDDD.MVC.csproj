@@ -7,10 +7,12 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj" />
+    <ProjectReference Include="..\ProjetoModeloDDD.Infra.Data\ProjetoModeloDDD.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

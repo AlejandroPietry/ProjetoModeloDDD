@@ -9,7 +9,11 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
 {
     public class RepositoryBase<T> : IDisposable, IRepositoryBase<T> where T : class
     {
-        protected ProjetoModeloContext _context = new ProjetoModeloContext();
+        protected ProjetoModeloContext _context;
+        public RepositoryBase(ProjetoModeloContext context)
+        {
+            _context = context;
+        }
         
         public void Add(T entity)
         {

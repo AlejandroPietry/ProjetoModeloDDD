@@ -20,7 +20,7 @@ namespace ProjetoModeloDDD.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ProjetoModeloContext>(options => options.UseInMemoryDatabase("teste"));
+            services.AddDbContext<ProjetoModeloContext>((options => options.UseInMemoryDatabase("teste")));
             services.AddControllersWithViews();
         }
 
