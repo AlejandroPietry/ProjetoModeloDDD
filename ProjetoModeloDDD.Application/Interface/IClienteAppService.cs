@@ -1,9 +1,9 @@
 ﻿using ProjetoModeloDDD.Domain.Entities;
 using System.Collections.Generic;
 
-namespace ProjetoModeloDDD.Domain.Interfaces.Servicos
+namespace ProjetoModeloDDD.Application.Interface
 {
-    public interface IClienteService : IServiceBase<Cliente>
+    public interface IClienteAppService : IAppServiceBase<Cliente>
     {
         IEnumerable<Cliente> ObterClientesEspeciais(IEnumerable<Cliente> clientes);
     }

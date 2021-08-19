@@ -9,7 +9,7 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected ProjetoModeloContext _context;
+        protected readonly ProjetoModeloContext _context;
         public RepositoryBase(ProjetoModeloContext context)
         {
             _context = context;
