@@ -8,7 +8,7 @@ namespace ProjetoModeloDDD.Domain.Services
     {
         private readonly IClienteRepository _clienteRepository;
 
-        public ClienteService(IRepositoryBase<Cliente> repository) : base(repository)
+        public ClienteService(IClienteRepository repository) : base(repository)
         {
         }
     }
