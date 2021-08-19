@@ -10,7 +10,7 @@ namespace ProjetoModeloDDD.Infra.Data.Context
 {
     public class ProjetoModeloContext : DbContext
     {
-        public ProjetoModeloContext(DbContextOptions options) : base(options)
+        public ProjetoModeloContext(DbContextOptions<ProjetoModeloContext> options) : base(options)
         {
         }
 
