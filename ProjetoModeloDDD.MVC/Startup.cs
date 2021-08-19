@@ -1,10 +1,16 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProjetoModeloDDD.Domain.Entities;
+using ProjetoModeloDDD.Domain.Interfaces.Repositorios;
 using ProjetoModeloDDD.Infra.Data.Context;
+using ProjetoModeloDDD.Infra.Data.Repositories;
+using ProjetoModeloDDD.MVC.AutoMapper;
+using ProjetoModeloDDD.MVC.ViewModels;
 
 namespace ProjetoModeloDDD.MVC
 {
@@ -22,6 +28,18 @@ namespace ProjetoModeloDDD.MVC
         {
             services.AddDbContext<ProjetoModeloContext>(options => options.UseInMemoryDatabase("teste"));
             services.AddControllersWithViews();
+
+            //injecao de dependencia
+            services.AddTransient(typeof(IClienteRepository), typeof(ClienteRepository));
+            services.AddTransient(typeof(IProdutoRepository), typeof(ProdutoRepository));
+            services.AddTransient(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

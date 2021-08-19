@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.Domain.Interfaces;
+using ProjetoModeloDDD.Domain.Interfaces.Repositorios;
 using ProjetoModeloDDD.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -14,8 +14,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
     public class ClientesController : Controller
     {
         private readonly IClienteRepository _clienteRepository;
-        private readonly Mapper _mapper;
-        public ClientesController(IClienteRepository clienteRepository, Mapper mapper)
+        private readonly IMapper _mapper;
+        public ClientesController(IClienteRepository clienteRepository, IMapper mapper)
         {
             _clienteRepository = clienteRepository;
             _mapper = mapper;
