@@ -9,6 +9,6 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
         public ClienteRepository(ProjetoModeloContext context) : base(context)
         {
         }
-        
+
     }
 }

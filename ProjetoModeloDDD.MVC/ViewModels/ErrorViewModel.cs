@@ -1,5 +1,3 @@
-using System;
-
 namespace ProjetoModeloDDD.MVC.Models
 {
     public class ErrorViewModel

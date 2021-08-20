@@ -7,14 +7,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjetoModeloDDD.Application;
 using ProjetoModeloDDD.Application.Interface;
-using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.Domain.Interfaces.Repositorios;
 using ProjetoModeloDDD.Domain.Interfaces.Servicos;
 using ProjetoModeloDDD.Domain.Services;
 using ProjetoModeloDDD.Infra.Data.Context;
 using ProjetoModeloDDD.Infra.Data.Repositories;
 using ProjetoModeloDDD.MVC.AutoMapper;
-using ProjetoModeloDDD.MVC.ViewModels;
 
 namespace ProjetoModeloDDD.MVC
 {

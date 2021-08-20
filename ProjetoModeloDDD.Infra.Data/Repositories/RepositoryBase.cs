@@ -13,14 +13,14 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
         public RepositoryBase(ProjetoModeloContext context)
         {
             _context = context;
-            
+
         }
-        
+
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
             _context.SaveChanges();
-        }       
+        }
 
         public IEnumerable<T> GetAll()
         {

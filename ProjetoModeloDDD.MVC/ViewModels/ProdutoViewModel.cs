@@ -14,7 +14,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public string Nome { get; set; }
 
         [DataType(DataType.Currency)]
-        [Range(typeof(decimal),"0", "9999999999")]
+        [Range(typeof(decimal), "0", "9999999999")]
         [Required(ErrorMessage = "Preencha um valor")]
         public decimal Valor { get; set; }
 

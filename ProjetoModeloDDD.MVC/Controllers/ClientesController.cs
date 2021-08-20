@@ -3,12 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoModeloDDD.Application.Interface;
 using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.Domain.Interfaces.Repositorios;
 using ProjetoModeloDDD.MVC.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetoModeloDDD.MVC.Controllers
 {
@@ -25,7 +21,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: ClientesController
         public ActionResult Index()
         {
-            var listaClientesViewModel = 
+            var listaClientesViewModel =
                 _mapper.Map<IEnumerable<Cliente>, IEnumerable<ClienteViewModel>>(_clienteAppService.GetAll());
 
             return View(listaClientesViewModel);
