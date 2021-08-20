@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProjetoModeloDDD.Application.Interface;
 using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.Domain.Interfaces.Repositorios;
 using ProjetoModeloDDD.MVC.ViewModels;
@@ -13,11 +14,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
 {
     public class ClientesController : Controller
     {
-        private readonly IClienteRepository _clienteRepository;
+        private readonly IClienteAppService _clienteAppService;
         private readonly IMapper _mapper;
-        public ClientesController(IClienteRepository clienteRepository, IMapper mapper)
+        public ClientesController(IClienteAppService clienteAppService, IMapper mapper)
         {
-            _clienteRepository = clienteRepository;
+            _clienteAppService = clienteAppService;
             _mapper = mapper;
         }
 
@@ -25,7 +26,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Index()
         {
             var listaClientesViewModel = 
-                _mapper.Map<IEnumerable<Cliente>, IEnumerable<ClienteViewModel>>(_clienteRepository.GetAll());
+                _mapper.Map<IEnumerable<Cliente>, IEnumerable<ClienteViewModel>>(_clienteAppService.GetAll());
 
             return View(listaClientesViewModel);
         }
@@ -51,7 +52,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 var clienteDomain = _mapper.Map<ClienteViewModel, Cliente>(clienteViewModel);
 
-                _clienteRepository.Add(clienteDomain);
+                _clienteAppService.Add(clienteDomain);
                 RedirectToAction("Index");
             }
             return View(clienteViewModel);
