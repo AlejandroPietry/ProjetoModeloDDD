@@ -17,6 +17,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Required(ErrorMessage = "Campo Obrigatório")]
         [MaxLength(200, ErrorMessage = "Máximo de {0} caracteres")]
         [MinLength(2, ErrorMessage = "Minimo de {0} caracteres")]
+        [Display(Name = "Sobrenome")]
         public string SobreNome { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]

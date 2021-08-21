@@ -30,6 +30,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: ClientesController/Details/5
         public ActionResult Details(int id)
         {
+            
             return View();
         }
 
