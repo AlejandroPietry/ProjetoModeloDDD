@@ -12,8 +12,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public string DetalhesPedido { get; set; }
         public StatusPagamento StatusPagamento { get; set; }
         public DateTime DataCadastro { get; set; }
-        public virtual Cliente Cliente { get; set; }
-        public IEnumerable<Produto> Produtos { get; set; }
+        public virtual ClienteViewModel Cliente { get; set; }
+        public IEnumerable<ProdutoViewModel> Produtos { get; set; }
 
     }
 }

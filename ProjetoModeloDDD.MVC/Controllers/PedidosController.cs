@@ -17,7 +17,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _pedidoAppService = pedidoAppService;
             _mapper = mapper;
         }
-
+        [HttpGet]
         public IActionResult Index()     
         {
             IEnumerable<PedidoViewModel> listaPedidos =
@@ -39,6 +39,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
             TempData["alertaSucessoNoEnvio"] = "Salvo com sucesso";
             return RedirectToAction("Index");
 
+        }
+        [HttpGet, Route("add/{index}")]
+        public IActionResult Add(int index)
+        {
+            return PartialView("_EmptyRow", new ProdutoViewModel { Index = index, Nome = "Pao de pedra" });
         }
     }
 }

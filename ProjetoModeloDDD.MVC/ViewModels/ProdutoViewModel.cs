@@ -7,7 +7,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
     {
         [Key]
         public int Id { get; set; }
-
+        public int Index { get; set; }
         [Required(ErrorMessage = "Campo Obrigatório")]
         [MaxLength(200, ErrorMessage = "Máximo de {0} caracteres")]
         [MinLength(2, ErrorMessage = "Minimo de {0} caracteres")]
